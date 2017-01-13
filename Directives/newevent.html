@@ -1,0 +1,58 @@
+﻿<div class="container-fluid" ng-model="muepStartCtrl" slide-show-duration="2000" bn-slide-show="isVisible">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
+            <div class="form-bottom">
+                <form role="form" class="float-label">
+                    <hr style="color:goldenrod;font-weight:100">
+                    <div class="control">
+                        <input type="text" name="eventHost" placeholder="{{words.eventHost.f}}" id="eventHost" class="form-username form-control" ng-blur="newEntryEvent($event,words)" required><label for="eventHost">{{words.eventHost.f}}</label>
+                    </div>
+                    <br />
+                    <div class="control">
+                        <input type="text" name="eventName" placeholder="{{words.eventName.f}}" id="eventName" class="form-username form-control" ng-blur="newEntryEvent($event,words)" required><label for="eventName">{{words.eventName.f}}</label>
+                    </div>
+                    <br />
+                    <div class="control">
+                        <input type="text" name="eventCategory" placeholder="{{words.eventCategory.f}}" id="eventCategory" class="form-username form-control" ng-blur="newEntryEvent($event,words)" required>
+                        <label for="eventCategory">{{words.eventCategory.f.substring(0, 14)}}</label>
+                    </div>
+                    <br />
+                    <div class="control">
+                        <input type="text" name="eventAddress" placeholder="{{words.eventAddress.f}}" id="eventAddress" class="form-username form-control" ng-blur="getLatLng($event);newEntryEvent($event,words)" required><label for="eventAddress">{{words.eventAddress.f}}</label>
+                    </div>
+                    <div id="addressMessage" ng-hide="words.addressMessage.h">
+                        <h5 style="color:lightgrey">{{words.addressMessage.f}}</h5>
+                    </div>
+                    <label for="calendarStartTimeBtn"><h5 style="color:lightgrey">{{words.eventStart.f}}</h5></label>
+                    <p class="input-group">
+                        <input id="eventStart" type="text" class="form-control" datetime-picker="MM/dd/yyyy HH:mm" ng-model="calendarDates.dateStart" is-open="calendarIsOpenStart.date" ng-click="openCalendarStart($event, 'date')" ng-blur="newEntryEvent($event,words)" />
+                        <span class="input-group-btn">
+                            <button id="calendarStartTimeBtn" type="button" class="btn btn-default" ng-click="openCalendarStart($event, 'date')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                    <label for="calendarEndTimeBtn"><h5 style="color:lightgrey">{{words.eventEnd.f}}</h5></label>
+                    <p class="input-group">
+                        <input id="eventEnd" type="text" class="form-control" datetime-picker="MM/dd/yyyy HH:mm" ng-model="calendarDates.dateEnd" is-open="calendarIsOpenEnd.date" ng-click="openCalendarEnd($event, 'date')" ng-blur="newEntryEvent($event,words)" />
+                        <span class="input-group-btn">
+                            <button id="calendarEndTimeBtn" type="button" class="btn btn-default" ng-click="openCalendarEnd($event, 'date')"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                    <div class="control">
+                        <textarea name="eventEmail" placeholder="{{words.eventEmail.f}}" id="eventEmail" class="form-username form-control" ng-blur="newEntryEvent($event,words)" required></textarea>
+                        <label for="eventEmail">{{words.eventEmail.f.substring(0, 11)}}</label>
+                    </div>
+                    <div class="control">
+                        <textarea name="eventNote" placeholder="{{words.eventNote.f}}" id="eventNote" class="form-username form-control" ng-blur="newEntryEvent($event,words)"></textarea>
+                        <label for="eventNote">{{words.eventNote.f.substring(0, 19)}}</label>
+                    </div>
+                    <hr style="color:goldenrod;font-weight:100">
+                    <span class="btn-lg col-md-pull-0 col-lg-offset-4" style="margin-right:50px">
+                        <button type="submit" class="btn-lg col-md-push-12" id="registerEvent" ng-click="registerEvent($event)">
+                            {{words.buttons.registerEvent}}
+                        </button>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

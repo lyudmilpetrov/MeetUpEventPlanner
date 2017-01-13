@@ -1,0 +1,42 @@
+﻿<div class="container-fluid" ng-model="muepStartCtrl" slide-show-duration="2000" bn-slide-show="isVisibleEvents" id="Events">
+    <br />
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
+            <div class="form-bottom">
+                <form role="form" class="login-form">
+                    <div class="center-block">
+                        <div class="btn-toolbar">
+                            <button ng-repeat="n in fe | orderBy:'-eventEnd' track by n.idX" type="button" class="btn btn-default btn-group-lg" data-toggle="modal" data-target="#{{n.idX}}" style="background-color:#0094ff">{{n.eventName}}</button>
+                            <div ng-repeat="n in fe | orderBy:'-eventEnd' track by n.idX" class="modal fade" id="{{n.idX}}" role="dialog">
+                               <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" align="center" style="color:#0026ff">{{n.eventCategory}}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p align="center"><b><u>The event is {{n.eventName}}</u></b></p>
+                                            <b align="justify">Organizer is {{n.email}}.</b>
+                                            <br />
+                                            <b align="justify">The event will be hosted by {{n.eventHost}}</b>
+                                            <br />
+                                            <b align="justify">The event will start at {{n.eventStart}} and end at {{n.eventEnd}}.</b>
+                                            <br />
+                                            <b align="justify" style="color:#ff6a00">The event will be held at {{n.eventAddress}}.</b>
+                                            <br />
+                                            <b align="justify">Guest list: {{n.eventEmail}}.</b>
+                                            <br />
+                                            <b align="justify">Notes to the guests: {{n.eventNote}}.</b>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:#0094ff">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿<div ng-controller="muepCtrl" ng-hide="false" style="background-color:#808080">
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <center><h1><strong>{{words.fieldsMUEPMainLable1.f}}</strong></h1></center>
+                        <center><h4>{{words.fieldsMUEPMainLable2.f}}</h4></center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-bottom">
+                            <form role="form" class="float-label">
+                                <div class="control">
+                                    <input type="text" name="firstName" placeholder="{{words.firstNameLogin.f}}" class="form-username form-control" id="firstNameLogin" autocomplete="firstName" autofill="autofill" ng-blur="newEntry($event,words)" required>
+                                    <label for="firstName">{{words.firstNameLogin.f}}</label>
+                                </div>
+                                <br />
+                                <div class="control">
+                                    <input type="text" name="lastName" placeholder="{{words.lastNameLogin.f}}" class="form-username form-control" id="lastNameLogin" autocomplete="lastName" autofill="autofill" ng-blur="newEntry($event,words)" required>
+                                    <label for="lastName">{{words.lastNameLogin.f}}</label>
+                                </div>
+                                <br />
+                                <div class="control">
+                                    <input type="text" name="emailLogin" placeholder="{{words.emailLogin.f}}" class="form-username form-control" id="emailLogin" autocomplete="email" autofill="autofill" ng-blur="checkUserEmailExistance($event,words)" required>
+                                    <label for="emailLogin">{{words.emailLogin.f}}</label>
+                                </div>
+                                <br />
+                                <div id="emailLoginThumbs" ng-hide="words.emailLoginThumbs.h"><p>{{words.emailLoginThumbs.f}}<span class="glyphicon glyphicon-thumbs-down" style="color:#be1313"></span></p></div>
+                                <div class="control">
+                                    <input type="password" name="emailLoginPassword0" placeholder="{{words.emailLoginPassword0.f}}" class="form-password form-control" id="emailLoginPassword0" ng-keyup="consumePassword($event)" ng-blur="newEntry($event,words);" required>
+                                    <label for="emailLoginPassword0">{{words.emailLoginPassword0.f}}</label>
+                                </div>
+                                <br />
+                                <div class="control">
+                                    <input type="password" name="emailLoginPassword1" placeholder="{{words.emailLoginPassword1.f}}" class="form-password form-control" id="emailLoginPassword1" required autocomplete="off" ng-blur="checkPasswordMatch()">
+                                    <label for="emailLoginPassword1">{{words.emailLoginPassword1.f}}</label>
+                                </div>
+                                <br class="remove" />
+                                <p class="remove" hm-swipe="remove_something({{id}})">{{words.letterCounter.f}} <span id="letterCounter" class="" style="color:#be1313"></span></p>
+                                <p class="remove">{{words.letterUL.f}} <span id="letterUL" class="" style="color:#be1313"></span></p>
+                                <p class="remove">{{words.letterNS.f}} <span id="letterNS" class="" style="color:#be1313"></span></p>
+                                <span class="btn-group pull-left" style="margin-left:10px"><button type="submit" class="btn-lg" id="logOnsignIn" ng-click="addNewUser()">{{words.buttons.signUp}}</button></span>
+                                <span id="alreadyMemberSpan" style="margin-right:0px;text-decoration:underline;" ng-click="signIn()"><a  class="btn-lg col-md-pull-0 col-lg-offset-3" autofocus id="alreadyMember" style="color:black; font-weight:lighter">{{words.buttons.signIn}}</a></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

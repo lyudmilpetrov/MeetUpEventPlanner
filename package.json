@@ -1,0 +1,13 @@
+{
+  "name": "meetupandeventplanner",
+  "version": "0.1.0",
+  "author": "Lyudmil Petrov",
+  "description": "Stupid school staff",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-sass": "^2.2.0"
+  }
+}

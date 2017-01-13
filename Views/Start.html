@@ -1,0 +1,21 @@
+﻿<div ng-controller="muepStartCtrl">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text">
+            <center><h1><strong>{{words.fieldsMUEPMainLable1.f}}</strong></h1></center>
+        </div>
+    </div>
+    <div class="row" style="background-color:#808080">
+            <button type="submit" class="btn-lg col-md-pull-0 col-lg-offset-3" id="newEvent" ng-click="newEvent()">
+                {{words.buttons.newEvent}}
+            </button>
+            <button type="submit" class="btn-lg col-md-pull-0 col-lg-offset-1" id="newCheckEvents" ng-click="checkEvents()">
+                {{words.buttons.checkEvent}}
+            </button>
+            <button type="submit" class="btn-lg col-md-pull-0 col-lg-offset-1" id="listEvents" ng-click="listEvents()">
+                {{words.buttons.listEvent}}
+            </button>
+            <newevent style="display:none;" ng-style="loaded"></newevent>
+            <mapframe style="display:none;" ng-style="loadedmapframe"></mapframe>
+            <events style="display:none;" ng-style="loadedevents"></events>
+        </div>
+</div>

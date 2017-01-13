@@ -1,0 +1,34 @@
+﻿<div ng-controller="muepCtrl" ng-hide="false" style="background-color:#808080">
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <center><h1><strong>{{words.fieldsMUEPMainLable1.f}}</strong></h1></center>
+                        <br />
+                        <center><h4>{{words.fieldsMUEPMainLable2.f}}</h4></center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-bottom">
+                            <form role="form" class="float-label">
+                                <div class="control">
+                                    <input type="text" name="emailLogin" placeholder="{{words.emailLogin.f}}" class="form-username form-control" id="emailLogon" autocomplete="emailLogin" autofill="autofill" ng-blur="checkEmailIfReal()" required><label for="emailLogin">{{words.emailLogin.f}}</label>
+                                </div>
+                                <div class="control">
+                                    <input type="password" name="emailLoginPassword0" placeholder="{{words.emailLoginPassword0.f}}" autofill="autofill" autocomplete="emailLoginPassword0" class="form-password form-control" id="emailLogonPassword0" ng-keyup="consumePassword($event)" required><label for="emailLogonPassword0">{{words.emailLoginPassword0.f}}</label>
+                                </div>
+                                <br />
+                                <p ng-hide="passrullsCounts">{{words.letterCounter.f}}<span id="letterCounter" style="color:#be1313"></span></p>
+                                <p ng-hide="passrullsLetterU">{{words.letterUL.f}}<span id="letterUL" style="color:#be1313"></span></p>
+                                <p ng-hide="passrullsLetterNS">{{words.letterNS.f}} <span id="letterNS" style="color:#be1313"></span></p>
+                                <span class="btn-group pull-left" style="margin-left:0px"><button type="submit" class="btn-lg col-md-pull-0 col-lg-offset-3" id="logOn" ng-click="LogOn()">{{words.buttons.welcome}}</button></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
